@@ -1,0 +1,8 @@
+{
+  "name": "light-vk-client",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

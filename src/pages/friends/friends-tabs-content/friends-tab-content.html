@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Друзья</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let friend of (friends | async)">
+            <ion-avatar item-start>
+                <img src="{{friend.photo_50}}">
+            </ion-avatar>
+            <h2>
+                {{friend.first_name}} {{friend.last_name}}
+            </h2>
+            <p *ngIf="friend.online === 1; else offline">В сети</p>
+            <ng-template #offline>
+                <p>Не в сети</p>
+            </ng-template>
+        </ion-item>
+    </ion-list>
+</ion-content>
